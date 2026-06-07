@@ -76,4 +76,4 @@ https://pokedex12.vercel.app/
 
 ## Video demostrativo
 
-link de mi yutu xd
+https://youtu.be/Wq0lr5FtrD8
