@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../App.css";
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -10,20 +11,21 @@ function Home() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>PokeDex Explorer</h1>
+    <div className="container">
+      <div className="hero">
+        <h1>PokeDex Explorer</h1>
+        <p>
+          Explora Pokémon obtenidos desde la PokéAPI utilizando React y Vite.
+        </p>
+      </div>
 
-      <p>
-        Explora Pokémon obtenidos desde la PokéAPI utilizando React y Vite.
-      </p>
-
-      <h2>Lista de Pokémon</h2>
-
-      <ul>
+      <div className="grid">
         {pokemons.map((pokemon) => (
-          <li key={pokemon.name}>{pokemon.name}</li>
+          <div className="card" key={pokemon.name}>
+            <h3>{pokemon.name}</h3>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

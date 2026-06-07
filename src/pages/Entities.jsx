@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../App.css";
 
 function Entities() {
   const [pokemons, setPokemons] = useState([]);
@@ -6,7 +7,7 @@ function Entities() {
   useEffect(() => {
     const loadPokemons = async () => {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=10"
+        "https://pokeapi.co/api/v2/pokemon?limit=12"
       );
 
       const data = await response.json();
@@ -25,25 +26,21 @@ function Entities() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Listado de Pokémon</h1>
+    <div className="container">
+      <div className="hero">
+        <h1>Pokémon Details</h1>
+      </div>
 
-      {pokemons.map((pokemon) => (
-        <div
-          key={pokemon.id}
-          style={{
-            border: "1px solid #ccc",
-            marginBottom: "10px",
-            padding: "10px",
-            borderRadius: "8px",
-          }}
-        >
-          <h3>{pokemon.name}</h3>
-          <p>ID: {pokemon.id}</p>
-          <p>Altura: {pokemon.height}</p>
-          <p>Peso: {pokemon.weight}</p>
-        </div>
-      ))}
+      <div className="grid">
+        {pokemons.map((pokemon) => (
+          <div className="card" key={pokemon.id}>
+            <h3>{pokemon.name}</h3>
+            <p>ID: {pokemon.id}</p>
+            <p>Altura: {pokemon.height}</p>
+            <p>Peso: {pokemon.weight}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
