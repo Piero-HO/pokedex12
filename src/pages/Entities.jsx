@@ -65,19 +65,37 @@ function Entities() {
   }}
 >
             <img
-              src={pokemon.sprites.front_default}
-              alt={pokemon.name}
-              className="pokemon-image"
-            />
+  src={pokemon.sprites.other["official-artwork"].front_default}
+  alt={pokemon.name}
+  className="pokemon-image"
+/>
 
-            <h3>{pokemon.name.toUpperCase()}</h3>
+<h3>{pokemon.name.toUpperCase()}</h3>
 
-            <p>ID: {pokemon.id}</p>
-            <p>Altura: {pokemon.height}</p>
-            <p>Peso: {pokemon.weight}</p>
-            <p>
-  <strong>Tipo:</strong> {pokemon.types[0].type.name}
+<p style={{ color: "#666", marginBottom: "10px" }}>
+  Pokémon #{pokemon.id}
 </p>
+
+<div className="pokemon-info">
+  <div className="info-item">
+    <span>#</span>
+    <strong>{pokemon.id}</strong>
+  </div>
+
+  <div className="info-item">
+    <span>📏</span>
+    <strong>{pokemon.height}</strong>
+  </div>
+
+  <div className="info-item">
+    <span>⚖️</span>
+    <strong>{pokemon.weight}</strong>
+  </div>
+
+  <div className="pokemon-type">
+    {pokemon.types[0].type.name.toUpperCase()}
+  </div>
+</div>
           </div>
           
         ))}
