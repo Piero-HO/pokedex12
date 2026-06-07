@@ -87,3 +87,14 @@ body {
 .card {
   text-align: center;
 }
+
+.search-input {
+  margin-top: 20px;
+  padding: 12px;
+  width: 300px;
+  max-width: 90%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.15);
+}
