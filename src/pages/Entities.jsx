@@ -28,7 +28,8 @@ function Entities() {
   return (
     <div className="container">
       <div className="hero">
-        <h1>Pokémon Details</h1>
+        <h1>Pokédex Explorer</h1>
+<p>Información detallada de los Pokémon obtenidos desde la PokéAPI</p>
       </div>
 
       <div className="grid">
@@ -62,7 +63,7 @@ function Entities() {
             <p>Altura: {pokemon.height}</p>
             <p>Peso: {pokemon.weight}</p>
             <p>
-  Tipo: {pokemon.types[0].type.name}
+  <strong>Tipo:</strong> {pokemon.types[0].type.name}
 </p>
           </div>
           
