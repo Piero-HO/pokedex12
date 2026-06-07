@@ -1,16 +1,79 @@
-# React + Vite
+# PokeDex Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+PokeDex Explorer es una aplicación desarrollada con React y Vite que consume datos desde la PokéAPI para mostrar información de distintos Pokémon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La aplicación incluye navegación entre páginas utilizando React Router y permite visualizar información básica de los Pokémon obtenidos desde una API pública.
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* React Router DOM
+* JavaScript
+* PokéAPI
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/Piero-HO/pokedex12.git
+```
+
+Ingresar al proyecto:
+
+```bash
+cd pokedex-react
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar el proyecto:
+
+```bash
+npm run dev
+```
+
+## Funcionalidades
+
+### Home (/)
+
+* Hero principal del proyecto.
+* Consumo de la PokéAPI.
+* Listado de Pokémon obtenidos desde la API.
+
+### Entities (/entities)
+
+* Visualización de Pokémon con múltiples propiedades.
+* Se muestran:
+
+  * ID
+  * Nombre
+  * Altura
+  * Peso
+
+### Navegación
+
+* Implementada mediante React Router DOM.
+
+## API utilizada
+
+https://pokeapi.co/api/v2/pokemon
+
+## Repositorio GitHub
+
+https://github.com/Piero-HO/pokedex12
+
+## Deploy
+
+https://pokedex12.vercel.app/
+
+## Video demostrativo
+
+link de mi yutu xd
