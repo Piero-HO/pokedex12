@@ -33,7 +33,23 @@ function Entities() {
 
       <div className="grid">
         {pokemons.map((pokemon) => (
-          <div className="card" key={pokemon.id}>
+          <div
+  className="card"
+  key={pokemon.id}
+  style={{
+    borderTop: `8px solid ${
+      pokemon.types[0].type.name === "grass"
+        ? "#4CAF50"
+        : pokemon.types[0].type.name === "fire"
+        ? "#FF5722"
+        : pokemon.types[0].type.name === "water"
+        ? "#2196F3"
+        : pokemon.types[0].type.name === "electric"
+        ? "#FFC107"
+        : "#9E9E9E"
+    }`,
+  }}
+>
             <img
               src={pokemon.sprites.front_default}
               alt={pokemon.name}
@@ -45,7 +61,11 @@ function Entities() {
             <p>ID: {pokemon.id}</p>
             <p>Altura: {pokemon.height}</p>
             <p>Peso: {pokemon.weight}</p>
+            <p>
+  Tipo: {pokemon.types[0].type.name}
+</p>
           </div>
+          
         ))}
       </div>
     </div>
