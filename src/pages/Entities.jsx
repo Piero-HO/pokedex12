@@ -1,30 +1,19 @@
 import { useEffect, useState } from "react";
 import "../App.css";
+import { getPokemons } from "../services/pokemonService";
 
 function Entities() {
   const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    const loadPokemons = async () => {
-      const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=12"
-      );
+  const loadPokemons = async () => {
+    const data = await getPokemons();
+    setPokemons(data);
+  };
 
-      const data = await response.json();
-
-      const details = await Promise.all(
-        data.results.map(async (pokemon) => {
-          const res = await fetch(pokemon.url);
-          return res.json();
-        })
-      );
-
-      setPokemons(details);
-    };
-
-    loadPokemons();
-  }, []);
+  loadPokemons();
+}, []);
 
   const filteredPokemons = pokemons.filter((pokemon) =>
   pokemon.name.toLowerCase().includes(search.toLowerCase())
